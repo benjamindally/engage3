@@ -15,7 +15,9 @@ export default class Products extends Component {
 
   readProducts = () => {
     productsAPI.readProducts().then(response => {
-      this.setState({ productsArray: response.data });
+      if (response) {
+        this.setState({ productsArray: response.data });
+      }
     });
   };
 

@@ -17,7 +17,9 @@ export default class CreateProduct extends Component {
 
   readCategories = () => {
     categoriesAPI.readCategories().then(response => {
-      this.setState({ categoriesArray: response.data });
+      if (response) {
+        this.setState({ categoriesArray: response.data });
+      }
     });
   };
   handleChange = event => {
