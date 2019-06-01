@@ -5,7 +5,6 @@
 var Sequelize = require("sequelize");
 var env = process.env.NODE_ENV || "development";
 var config = require(__dirname + "/../config/config.json")[env];
-
 var db = {};
 
 //Start a new sequelize instance
@@ -32,7 +31,7 @@ db.createCategory = function(req, res) {
   });
 };
 
-//Find all the categories
+//Find all the categories database
 db.readCategories = function(req, res) {
   Categories.findAll({})
     .then(function(response) {
