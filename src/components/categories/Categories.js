@@ -16,9 +16,7 @@ export default class Categories extends Component {
 
   readCategories = () => {
     categoriesAPI.readCategories().then(response => {
-      if (response) {
-        this.setState({ categoriesArray: response.data });
-      }
+      this.setState({ categoriesArray: response.data });
     });
   };
 
